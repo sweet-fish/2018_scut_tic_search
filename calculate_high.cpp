@@ -1,30 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define mem(a,b) memset((a),b,sizeof((a)))
-#define clr(sum) (sum).clear()
-#define mp make_pair
-#define pb push_back
-#define ll long long
-#define ld long double
-#define Endl '\n'
-#define IOS ios::sync_with_stdio(0);cin.tie(0);cout.tie(0)
-#define lowbit(i) (i&(-i))
-#define lson rt<<1
-#define rson lson|
-using namespace std;
-
-
-/*
-sin:a
-cos:c
-tan:t
-asin:S
-acos:C
-atan:T
-pow:^
-ln:l
-优先级：+ - < 函数 < * / < ^
-*/
 const string pi="3.1415926535897932384626433 ";
 string to_suf(string s)
 {
