@@ -1,1 +1,0 @@
-# 2018_scut_tic_search
