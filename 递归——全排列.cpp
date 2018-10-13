@@ -1,6 +1,4 @@
-
 #include <iostream>
-#include<algorithm>
 using namespace std;
 void all_perm(int a[], int left, int right)
 {
@@ -23,16 +21,8 @@ void all_perm(int a[], int left, int right)
 }
 int main()
 {
-	int a[4];
-	for (int i = 0; i < 4; ++i)
+	int a[3];
+	for (int i = 0; i < 3; ++i)
 		cin >> a[i];
-	cout << endl << endl;
-	do
-	{
-		for (int i = 0; i < 4; ++i)
-			cout << a[i] << ' ';
-		cout << endl;
-	} while (next_permutation(a, a + 4));
-	cout << "OVER" << endl;
+	all_perm(a, 0, 3);
 }
-
