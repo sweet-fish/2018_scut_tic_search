@@ -11,19 +11,14 @@ void dfs(int x, int y)
 		{
 			//遍历周围八个格子
 			int nx = x + i, ny = y + j;
-
 			//跳过界外
 			if (nx < 0 || nx >= n || ny < 0 || ny >= m)
 				continue;
-
 			//跳过*和被标记的#
 			if (s[nx][ny] != '#' || v[nx][ny])
 				continue;
-
 			v[nx][ny] = 1;	//打上标记
-
 			dfs(nx, ny);	//深搜这一步
-
 		}
 }
 int main()
