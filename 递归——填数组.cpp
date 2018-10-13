@@ -27,7 +27,7 @@ void dfs(int x, int y)//得到坐标为(x, y)的元素状态
 }
 int main()
 {
-	dfs(0, 0);//从初始状态开始搜索即可
+	dfs(0, 0);//从初始状态开始递归即可
 	return 0;
 }
 
