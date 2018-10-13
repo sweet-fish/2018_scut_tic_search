@@ -31,7 +31,8 @@ bool is_expr(int left, int right)
 			--cnt;
 
 		//表明仍有没计算的运算符
-		if (cnt == 0 && (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/'))
+		if (cnt == 0 && (s[i] == '+' || s[i] == '-' ||
+				 s[i] == '*' || s[i] == '/'))
 			return 0;
 	} 
 	return flag;
