@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 string to_suf(string s)
 {
 	string res;
@@ -17,7 +19,7 @@ string to_suf(string s)
 				res += "0 ";
 				tmp.push(s[i - 1]);
 			}
-			//获得数字
+			//数字直接加入表达式
 			while ((s[i] >= '0'&&s[i] <= '9') || s[i] == '.')
 			{
 				res += s[i];
@@ -74,4 +76,51 @@ string to_suf(string s)
 		tmp.pop();
 	}
 	return res;
+}
+int cal_suf(string s)
+{
+	stack<int>num;	//存数字的栈
+	int len = s.size();
+	for (int i = 0; i < len; ++i)
+	{
+		//遇到数字直接入栈
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			int val = 0;
+			while (s[i] >= '0' && s[i] <= '9')
+			{
+				val += s[i] - '0';
+				val *= 10;
+				++i;
+			}
+			val /= 10;
+			num.push(val);
+		}
+		//遇到运算符，取出两个数字，运算后放回
+		else
+		{
+			int r = num.top();
+			num.pop();
+			int l = num.top();
+			num.pop();
+			if (s[i] == '+')
+				num.push(l + r);
+			else if (s[i] == '-')
+				num.push(l - r);
+			else if (s[i] == '*')
+				num.push(l * r);
+			else if (s[i] == '/')
+				num.push(l / r);
+		}
+	}
+	//最后只剩下一个数，那就是结果
+	return num.top();
+}
+int main()
+{
+	string s;
+	while (cin >> s)
+	{
+		cout << cal_suf(to_suf(s)) << endl;
+	}
 }
