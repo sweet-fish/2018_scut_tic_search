@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-long long f(long long n, long long m)
+long long f(int n, int m)
 {
 	if (m == 1 || n == 0)
 		return 1;
@@ -10,7 +10,7 @@ long long f(long long n, long long m)
 }
 int main()
 {
-	long long a, b;
+	int a, b;
 	while (cin >> a >> b)
 	{
 		cout << f(a, b) << endl;
