@@ -16,4 +16,3 @@ int main()
 		cout << f(a, b) << endl;
 	}
 }
-
